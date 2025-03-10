@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextEditor</title>
+    <style>
+        ::selection{
+            background-color: brown;
+        }
+
+        .he{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .hi{
+            padding:20px;
+        }
+        .jj{
+            width: 80px;
+            border-radius: 10px;
+            background-color: green;
+            border-top-color: aqua;
+            border-bottom-color: chocolate;
+            color:white;
+        }
+        button:hover{
+            cursor: pointer;   
+        }
+        body{
+            margin:-3px;
+            padding:0px;
+            background-color: lawngreen;
+        }
+        .hh{
+            padding:17px;
+            border-radius:25px;
+            overflow:hidden;
+        }
+        textarea{
+            position:relative;
+            right:10px;
+            top:40px;
+            resize:none;
+            font-size:25px;
+            height:450px;
+            width:100%;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Text Editor</h1>
+    <div class="he">
+        <div class="hi"><button  class="jj" onclick="h11()">BOLD</button></div>
+        <div class="hi"><button class="jj" onclick="h12()">ITALLIC</button></div>
+        <div class="hi"><button class="jj" onclick="h13()">Upper</button></div>
+        <div class="hi"><button class="jj" onclick="h14()">Lower</button></div>
+        <div class="hi"><button class="jj" onclick="h15()">Reverse</button></div>
+        <div class="hi"><button class="jj" onclick="h16()">Reset</button></div>
+    </div>
+    <div class="hh">
+        <textarea cols="150" rows="32" placeholder="Text goes here...." id="h1"></textarea>
+    </div>
+    
+</body>
+<script>
+    let r1=true;let r2=true;let r=true;
+    function h11(){
+        let a=document.getElementById('h1');
+        if(r1 && a.value!=''){
+            a.style.fontWeight="bold";
+            r1=false;
+        }
+        else{
+            let a=document.getElementById('h1');
+            a.style.fontWeight="normal";
+            r1=true;
+        }    
+    }
+    function h12(){
+        let a=document.getElementById('h1');
+        if(r2 && a.value!=""){
+            a.style.fontStyle="italic";
+            r2=false;
+        }
+        else{
+            let a=document.getElementById('h1');
+            a.style.fontStyle="normal";
+            r2=true;
+        }    
+    }
+    function h13(){
+        let a=document.getElementById('h1');
+        if(a.value!=''){
+            a.style.textTransform="uppercase";
+        }    
+    }
+    function h14(){
+        let a=document.getElementById('h1');
+        if(a.value!=''){
+            a.style.textTransform="lowercase";
+        }  
+    }
+    function h15(){
+        if(r){
+            let a=document.getElementById('h1').value;
+            let text="";
+            for(let i=a.length-1;i>=0;i--){
+                text+=a[i];
+            }
+            document.getElementById('h1').value=text;
+        }
+    }
+    function h16(){
+        let a=document.getElementById('h1');
+        a.style.fontStyle="normal";
+        a.style.fontWeight="normal";
+        a.value="";
+        
+    }
+
+</script>
+</html>
