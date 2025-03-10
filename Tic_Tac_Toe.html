@@ -120,6 +120,9 @@
             let cr=document.querySelector(".congrats");
             cr.classList.remove("hide");
             cr.innerHTML="CONGRATULATIONS :"+hello;
+            boxes.forEach((box)=>{
+                box.disabled=true;
+            })
         }
         resetbtn.addEventListener("click",()=>{
             boxes.forEach((box)=>{
